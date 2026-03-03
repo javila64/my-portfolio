@@ -1,0 +1,89 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { SITE, HOME } from "@consts";
+---
+
+<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+  <section class="flex flex-col gap-6 pt-16">
+    
+    {/* HERO SECTION */}
+    <div>
+      <h1 class="font-heading text-5xl font-bold tracking-tight text-[#e6e6e6] mb-2">
+        Jose Avila
+      </h1>
+      <h2 class="text-xl font-medium text-[#c1121f]">
+        Cybersecurity & Systems Enthusiast
+      </h2>
+    </div>
+
+    {/* ABOUT SECTION */}
+    <div class="flex flex-col gap-4 text-[#a1a1aa]">
+      <p class="leading-relaxed">
+        I am a sophomore pursuing a BBA in Cybersecurity and Information Systems at the University of Texas at San Antonio. I approach network architecture and systems administration with a builder's mindset—whether I'm designing routing topologies, deploying Linux environments, or troubleshooting hardware.
+      </p>
+      <p class="leading-relaxed">
+        My technical philosophy is heavily influenced by systems thinking and the strategic, analytical nature of turn-based RPGs. If I'm not configuring an Active Directory homelab or tweaking my latest Debian setup, I'm probably theorycrafting my next PC build.
+      </p>
+    </div>
+
+    {/* CTA BUTTONS */}
+    <div class="flex flex-wrap items-center gap-4 mt-4 text-sm font-mono">
+      <a href="/projects" class="px-5 py-2.5 rounded bg-[#c1121f] text-[#e6e6e6] hover:bg-[#a00f1a] transition-colors duration-200">
+        > View_Projects
+      </a>
+      <a href="/resume.pdf" class="px-5 py-2.5 rounded border border-[#151922] bg-[#151922] text-[#e6e6e6] hover:border-[#4f46e5] transition-colors duration-200">
+        Download_Resume
+      </a>
+      <a href={`mailto:${SITE.EMAIL}`} class="px-5 py-2.5 rounded border border-[#151922] bg-[#151922] text-[#e6e6e6] hover:border-[#f59e0b] transition-colors duration-200">
+        Contact_Me
+      </a>
+    </div>
+{/* SKILLS SECTION */}
+    <div id="skills" class="mt-16 scroll-mt-20">
+      <h3 class="font-heading text-2xl font-semibold text-[#e6e6e6] mb-6">Skill Tree</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        {/* Systems */}
+        <div class="p-4 border border-[#151922] bg-[#0f1115] rounded hover:border-[#4f46e5] transition-colors duration-300">
+          <h4 class="text-[#c1121f] font-mono text-sm mb-3">> Systems</h4>
+          <ul class="text-[#a1a1aa] text-sm space-y-2">
+            <li>Linux (Debian, Ubuntu, Kali)</li>
+            <li>Windows & Active Directory</li>
+            <li>Hardware Assembly & Troubleshooting</li>
+          </ul>
+        </div>
+
+        {/* Networking */}
+        <div class="p-4 border border-[#151922] bg-[#0f1115] rounded hover:border-[#4f46e5] transition-colors duration-300">
+          <h4 class="text-[#c1121f] font-mono text-sm mb-3">> Networking</h4>
+          <ul class="text-[#a1a1aa] text-sm space-y-2">
+            <li>Network Topology Design</li>
+            <li>Cisco Packet Tracer</li>
+            <li>Tailscale</li>
+          </ul>
+        </div>
+
+        {/* Security */}
+        <div class="p-4 border border-[#151922] bg-[#0f1115] rounded hover:border-[#4f46e5] transition-colors duration-300">
+          <h4 class="text-[#c1121f] font-mono text-sm mb-3">> Security</h4>
+          <ul class="text-[#a1a1aa] text-sm space-y-2">
+            <li>Splunk & Universal Forwarders</li>
+            <li>CompTIA Security+ Concepts</li>
+            <li>Access Control</li>
+          </ul>
+        </div>
+
+        {/* Programming & Tools */}
+        <div class="p-4 border border-[#151922] bg-[#0f1115] rounded hover:border-[#4f46e5] transition-colors duration-300">
+          <h4 class="text-[#c1121f] font-mono text-sm mb-3">> Dev & Tools</h4>
+          <ul class="text-[#a1a1aa] text-sm space-y-2">
+            <li>Python</li>
+            <li>Docker & Portainer</li>
+            <li>VirtualBox</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,26 @@
+---
+title: "Active Directory & Splunk SOC Lab"
+description: "Deploying a segmented enterprise environment with centralized telemetry ingestion and simulated adversary attacks."
+date: "2026-03-03"
+tech: ["Active Directory", "Splunk", "Sysmon", "Kali Linux", "Atomic Red Team"]
+status: "In Progress"
+impact: "Establishing hands-on experience with endpoint logging, SIEM configuration, and threat hunting workflows."
+featured: true
+order: 1
+---
+
+## Problem
+Modern enterprise networks require robust logging and active monitoring to detect malicious behavior. To bridge the gap between theoretical security concepts and practical application, I needed a functional lab environment to deploy Windows endpoints, configure a domain controller, and aggregate telemetry using an industry-standard SIEM.
+
+## Approach
+Following a structured SOC lab architecture, I deployed a virtualized network (192.168.10.0/24) encompassing a Windows Server running Active Directory and a dedicated Ubuntu Splunk server. Windows endpoints were configured with Sysmon and Splunk Universal Forwarders to ship logs centrally. I am currently utilizing Kali Linux and Atomic Red Team to simulate adversary techniques and validate detection capabilities.
+
+## What I Learned
+(Documentation pending final lab completion - currently focusing on fine-tuning log ingestion and navigating the Splunk SPL syntax to hunt for specific Sysmon Event IDs).
+
+## Screenshots
+<img src="/network-diagram.png" alt="JALab Network Topology" style="background-color: #e6e6e6; padding: 1rem; border-radius: 0.5rem; width: 100%;" />
+
+## Future Improvements
+- Implement automated response actions based on specific Splunk alerts.
+- Expand the domain to include vulnerable web services for broader attack vector simulations.
