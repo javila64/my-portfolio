@@ -13,7 +13,7 @@ order: 1
 Modern enterprise networks require robust logging and active monitoring to detect malicious behavior. To bridge the gap between theoretical security concepts and practical application, I needed a functional lab environment to deploy Windows endpoints, configure a domain controller, and aggregate telemetry using an industry-standard SIEM.
 
 ## Approach
-Following a structured SOC lab architecture, I deployed a virtualized network (192.168.10.0/24) encompassing a Windows Server running Active Directory and a dedicated Ubuntu Splunk server. Windows endpoints were configured with Sysmon and Splunk Universal Forwarders to ship logs centrally. I am currently utilizing Kali Linux and Atomic Red Team to simulate adversary techniques and validate detection capabilities.
+Following a structured SOC lab architecture, I deployed a virtualized network (192.168.10.0/24) using VirtualBox on my computer. The environment encompasses a Windows Server running Active Directory and a dedicated Ubuntu Splunk server. Windows endpoints were configured with Sysmon and Splunk Universal Forwarders to ship logs centrally. I am currently utilizing Kali Linux and Atomic Red Team to simulate attacks.
 
 ## What I Learned
 (Documentation pending final lab completion - currently focusing on fine-tuning log ingestion and navigating the Splunk SPL syntax to hunt for specific Sysmon Event IDs).

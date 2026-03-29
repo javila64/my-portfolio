@@ -5,7 +5,6 @@ import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
-import Link from "@components/Link.astro";
 
 export async function getStaticPaths() {
   const projects = (await getCollection("projects"))
@@ -24,44 +23,29 @@ const { Content } = await project.render();
 
 <PageLayout title={project.data.title} description={project.data.description}>
   <Container>
-    <div class="animate">
-      <BackToPrev href="/projects">
-        Back to projects
-      </BackToPrev>
-    </div>
-    <div class="space-y-1 my-10">
-      <div class="animate flex items-center gap-1.5">
-        <div class="font-base text-sm">
-          <FormattedDate date={project.data.date} />
-        </div>
-        &bull;
-        <div class="font-base text-sm">
-          {readingTime(project.body)}
-        </div>
+    <div class="pt-32 pb-24 max-w-3xl mx-auto w-full px-6">
+      
+      <div class="mb-8 font-mono text-sm">
+        <BackToPrev href="/projects">
+          <span class="text-stone-500 hover:text-[#c1121f] transition-colors">> back_to_projects</span>
+        </BackToPrev>
       </div>
-      <div class="animate text-2xl font-semibold text-black dark:text-white">
+      
+      <div class="flex items-center gap-2 text-sm font-mono text-stone-500 mb-4">
+        <FormattedDate date={project.data.date} />
+        <span>/</span>
+        <span>{readingTime(project.body)}</span>
+      </div>
+      
+      <h1 class="text-4xl font-heading font-extrabold text-stone-900 mb-10">
         {project.data.title}
-      </div>
-      {(project.data.demoURL || project.data.repoURL) && (
-        <nav class="animate flex gap-1">
-          {project.data.demoURL && (
-            <Link href={project.data.demoURL} external>
-              demo
-            </Link>
-          )}
-          {project.data.demoURL && project.data.repoURL && (
-            <span>/</span>
-          )}
-          {project.data.repoURL && (
-            <Link href={project.data.repoURL} external>
-              repo
-            </Link>
-          )}
-        </nav>
-      )}
+      </h1>
+      
+      {/* This prose class is what controls your Markdown styling! */}
+      <article class="prose prose-stone max-w-none prose-headings:font-sans prose-headings:font-bold prose-headings:text-stone-900 prose-p:font-sans prose-p:text-stone-600 prose-li:font-sans prose-li:text-stone-600 prose-strong:font-sans prose-strong:text-stone-900 prose-a:font-sans prose-a:text-[#c1121f] prose-code:font-mono prose-code:text-[#c1121f] prose-code:bg-stone-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-img:rounded-xl prose-img:border prose-img:border-stone-200">
+        <Content />
+      </article>
+      
     </div>
-    <article class="animate">
-      <Content />
-    </article>
   </Container>
 </PageLayout>
